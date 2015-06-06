@@ -1,0 +1,55 @@
+  boolean BreadthFirstSearch (boolean[][] directConnections, int start, int end) {
+
+    //The toCheckList array functions as a queue (FIFO)
+    //toCheckHead and toCheckTail serve as bookmarks within toCheckList
+    //All of these are declared at the top of the page. 
+
+    //Add the starting point to the queue
+    toCheckList[0] = start;
+
+    //keep checking as long as there is something left in the queue 
+    while (toCheckHead < toCheckTail) {
+      //found the end?
+      if (directConnections[toCheckList[toCheckHead%100]][end]) {
+        //We're finished, so wipe the queue to prepare for future searches
+        for (int i = 0; i < toCheckList.length; i++) {
+          toCheckList[i] = 0;
+        }
+        toCheckTail = 1;
+        toCheckHead = 0;
+
+        //yes, found it
+        return true;
+      }
+
+      //otherwise, iterate over the relevant row in the connection table and
+      // add connected squares to the queue for future checking
+      for (int i = 0; i < directConnections.length; i++) {
+        if (directConnections[toCheckList[toCheckHead]][i]) {
+          //check for loops
+          boolean loop = false;
+          for (int j = 0; j < toCheckList.length; j++) {
+            if (i == toCheckList[j]) {
+              loop = true;
+              break;
+            }
+          }
+          if (!loop) {
+            toCheckList[toCheckTail] = i;
+            toCheckTail++;
+          }
+        }
+      }
+      toCheckHead++;
+    }
+
+    //We're finished, so wipe the queue to prepare for new searches
+    for (int i = 0; i < toCheckList.length; i++) {
+      toCheckList[i] = 0;
+    }
+    toCheckTail = 1;
+    toCheckHead = 0;
+
+    //Never found the end
+    return false;
+  }
