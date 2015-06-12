@@ -1,13 +1,13 @@
 /*
 -Replace mouselistener with mouseadapter
--Put some visible instructions up on the board, including a marker of whose turn it is, how many 
+-Put some visible instructions up on the board, including a marker of whose turn it is, how many walls are left, etc.
 -Include some method for indicating the legal moves on a given turn (translucent images?)
 -Error notification for illegal moves?
--Replace images with drawings, so that the size is easier to adjust, and so it all fits
+-Replace images with drawings, so that the size is easier to adjust
 -Undo function?
 -Restart function?
 
--Very distant future:
+-Very distant future?:
 	-online multiplayer
 	-AI opponent
 */
