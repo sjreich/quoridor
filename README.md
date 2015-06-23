@@ -15,8 +15,7 @@ The rules of the game are as follows:
     -If your token is next to your opponent's token, you can jump over them to the next square.
     -If your token is next to your opponent's token, and jumping over them is blocked by a wall or the board's edge, you can move diagonally to land next to your opponent's token.
     -Walls are as long as two squares.  
-    -Walls cannot be placed along the edge of the board.
-    -Most importantly, walls cannot be placed so that they totally block off a token from reaching the side it is aiming for.
+    -Importantly, walls cannot be placed so that they totally block off a token from reaching the side it is aiming for.
     
 Some information about the game will appear in the terminal after each move - whose turn it is, how many walls each side has left, and whether either player has won.
       
